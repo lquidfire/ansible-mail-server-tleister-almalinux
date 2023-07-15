@@ -1,11 +1,17 @@
+IMPORTANT NOTE: This is a work in progress, and not yet finished or functional!
+
+
+
 # Ansible playbook to setup a mail server
 
-This is an Ansible-Playbook for the great mail server setup described in this tutorial: https://thomas-leister.de/mailserver-debian-stretch/ written by Thomas Leister.
+This is an Ansible-Playbook for an adapted version of the mail server setup described in this tutorial: https://thomas-leister.de/mailserver-debian-stretch/ written by Thomas Leister.
+
+This mail server is intended to run on AlmaLinux OS 9 (and equivalents).
 
 ## Requirements
 
 - Ansible >= 2.7
-- Server with Debian Bullseye operating system (the installation on Ubuntu will also work, but is not tested)
+- Server with AlmaLinux OS 9 operating system (equivalent OS's might work, but have not been tested)
 - SSH key to login to the server
 - Public domain resolving to the server
 
@@ -58,12 +64,4 @@ Build, test and destroy in one command
 
 ```
 ANSIBLE_VAULT_PASSWORD_FILE=<YOUR_VAULT_PASS_FILE_PATH> molecule test
-```
-
-### Bats
-
-Send a email on the ready system with [bats](https://github.com/sstephenson/bats)
-
-```
-mail_user=USER mail_pass=PASS mail_host=HOST:587 bats smtp.bats
 ```
